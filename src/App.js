@@ -8,7 +8,7 @@ const $h2 = <h2>반가워요~~~~</h2>
 
   return (
     <>
-    <noname />
+    <noname/>
    <div className='App'>
 <h1>메롱메롱</h1>
     {$h2}  
