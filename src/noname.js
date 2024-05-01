@@ -1,12 +1,11 @@
-
 import React from 'react'
 
-const noname = () => {
+const NoName = () => {
   return (
     <div className='wrap'>
-      <h1>하이 하이~~~ </h1>
+      <h1>하이하이~~</h1>
     </div>
   )
 }
 
-export default noname;
+export default NoName;
