@@ -5,11 +5,11 @@ import ExpenseForm from './ExpenseForm';
 const NewExpense = ({ onAddExpense }) => {
   const [expenseToggle, setExpenseToggle] = useState(false);
 
-  const startInsertModHandler = () => setExpenseToggle(true);
+  const startInsertModeHandler = () => setExpenseToggle(true);
   const stopInsertModeHandler = () => setExpenseToggle(false);
 
   let newExpenseContent = (
-    <button onClick={startInsertModHandler}>새로운 지출 추가</button>
+    <button onClick={startInsertModeHandler}>새로운 지출 추가하기</button>
   );
 
   if (expenseToggle) {
@@ -20,6 +20,7 @@ const NewExpense = ({ onAddExpense }) => {
       />
     );
   }
+
   return <div className="new-expense">{newExpenseContent}</div>;
 };
 

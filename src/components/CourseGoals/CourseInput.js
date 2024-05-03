@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import Button from '../UI/Button/Button';
 import './CourseInput.css';
+
 const CourseInput = ({ onAdd }) => {
   const [enteredText, setEnteredText] = useState('');
-  //입력값 검증 상태변수
+  // 입력값 검증 상태변수
   const [isValid, setIsValid] = useState(true);
+
   const textChangeHandler = (e) => {
     if (e.target.value.trim().length > 0) {
       setIsValid(true);
     }
     setEnteredText(e.target.value);
   };
+
   const formSubmitHandler = (e) => {
     e.preventDefault();
+
     if (enteredText.trim().length === 0) {
       setIsValid(false);
       return;
@@ -21,6 +25,7 @@ const CourseInput = ({ onAdd }) => {
     onAdd(enteredText);
     setEnteredText('');
   };
+
   return (
     <form onSubmit={formSubmitHandler}>
       <div className={`form-control ${!isValid ? 'invalid' : ''}`}>
