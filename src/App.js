@@ -30,6 +30,18 @@ function App() {
       price: 18000,
       date: new Date(2023, 5 - 1, 1),
     },
+    {
+      id: 5,
+      title: '떡붂이',
+      price: 28000,
+      date: new Date(2023, 2 - 1, 1),
+    },
+    {
+      id: 6,
+      title: '붂이',
+      price: 28000,
+      date: new Date(2023, 3 - 1, 1),
+    },
   ];
   //지출 객체배열을 상태변수로 관리
   const [expenseList, setExpenseList] = useState(expenses);
