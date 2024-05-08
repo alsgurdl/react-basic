@@ -19,7 +19,8 @@ export const AuthContextProvider = ({ children }) => {
   // 리렌더링 될 때마다 실행하면 안됨! (한 번만 확인하면 됨.)
   useEffect(() => {
     console.log('useEffect 실행! - 최초 단 한번만 실행됨!');
-    const storedLoginFlag = localStorage.getItem('login-flag');
+    const storedLoginFlag =
+      localStorage.getItem('login-flag');
     if (storedLoginFlag === '1') {
       setIsLoggedIn(true);
     }
