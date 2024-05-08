@@ -1,4 +1,9 @@
-import React, { useContext, useEffect, useReducer, useState } from 'react';
+import React, {
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from 'react';
 import Card from '../../UI/Card';
 import styles from './Login.module.css';
 import Button from '../../UI/Button/Button';
@@ -53,15 +58,21 @@ const Login = () => {
     return1 - 이메일 관련 상태변수
     return2 - dispatch함수: 상태를 변경할 수 있는 함수
   */
-  const [emailState, dispatchEmail] = useReducer(emailReducer, {
-    value: '',
-    isValid: null,
-  });
+  const [emailState, dispatchEmail] = useReducer(
+    emailReducer,
+    {
+      value: '',
+      isValid: null,
+    },
+  );
 
-  const [pwState, dispatchPw] = useReducer(passwordReducer, {
-    value: '',
-    isValid: null,
-  });
+  const [pwState, dispatchPw] = useReducer(
+    passwordReducer,
+    {
+      value: '',
+      isValid: null,
+    },
+  );
 
   // 이메일, 패스워드가 둘 다 동시에 정상적인 상태인지 확인
   const [formIsValid, setFormIsValid] = useState(false);
@@ -130,33 +141,41 @@ const Login = () => {
     <Card className={styles.login}>
       <form onSubmit={submitHandler}>
         <div
-          className={`${styles.control} ${!emailIsValid ? styles.invalid : ''}`}
+          className={`${styles.control} ${
+            !emailIsValid ? styles.invalid : ''
+          }`}
         >
-          <label htmlFor="email">E-Mail</label>
+          <label htmlFor='email'>E-Mail</label>
           <Input
-            type="email"
-            id="email"
-            label="E-mail"
+            type='email'
+            id='email'
+            label='E-mail'
             value={emailState.value}
             onChange={emailChangeHandler}
             onBlur={validateEmailHandler}
           />
         </div>
         <div
-          className={`${styles.control} ${!pwIsValid ? styles.invalid : ''}`}
+          className={`${styles.control} ${
+            !pwIsValid ? styles.invalid : ''
+          }`}
         >
-          <label htmlFor="password">Password</label>
+          <label htmlFor='password'>Password</label>
           <Input
-            type="password"
-            id="password"
-            label="Password"
+            type='password'
+            id='password'
+            label='Password'
             value={pwState.value}
             onChange={passwordChangeHandler}
             onBlur={validatePasswordHandler}
           />
         </div>
         <div className={styles.actions}>
-          <Button type="submit" className={styles.btn} disabled={!formIsValid}>
+          <Button
+            type='submit'
+            className={styles.btn}
+            disabled={!formIsValid}
+          >
             Login
           </Button>
         </div>

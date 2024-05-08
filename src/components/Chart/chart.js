@@ -8,7 +8,10 @@ const Chart = ({ dataPoints }) => {
 
   // 1년치 총액
   // a: 리턴결과에 대한 누적값, b: 배열에서 하나씩 꺼낸 값
-  const totalValue = dataPointsValue.reduce((a, b) => a + b, 0);
+  const totalValue = dataPointsValue.reduce(
+    (a, b) => a + b,
+    0,
+  );
 
   return (
     <div className="chart">
